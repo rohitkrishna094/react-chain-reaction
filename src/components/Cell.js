@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Spheres from './Spheres';
+import './Sphere.css';
 
 export default class Cell extends Component {
   render() {
@@ -20,7 +21,15 @@ export default class Cell extends Component {
           textAlign: 'center'
         }}
       >
-        <Spheres count={this.props.count} id={this.props.id} />
+        <div
+          className="Sphere_sphere"
+          style={{
+            width: width,
+            height: height
+          }}
+        >
+          <Spheres count={this.props.count} id={this.props.id} />
+        </div>
       </div>
     );
   }
