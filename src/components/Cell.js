@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Spheres from './Spheres';
 
 export default class Cell extends Component {
   render() {
     const width = this.props.width || '50px';
     const height = this.props.height || '50px';
+    const count = this.props.count || 1;
 
     return (
       <div
@@ -18,24 +20,7 @@ export default class Cell extends Component {
           textAlign: 'center'
         }}
       >
-        <div
-          style={{
-            background: 'black',
-            width: '40%',
-            height: '40%',
-            borderTopLeftRadius: '50%',
-            borderTopRightRadius: '50%',
-            borderBottomLeftRadius: '50%',
-            borderBottomRightRadius: '50%',
-            display: 'inline-block',
-            position: 'relative',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            background: 'radial-gradient(circle at 15px 5px, rgb(0,255,0) 40%, rgb(0,0,0))'
-          }}
-        >
-          {/* {this.props.id} */}
-        </div>
+        <Spheres count={this.props.count} id={this.props.id} />
       </div>
     );
   }

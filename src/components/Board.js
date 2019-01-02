@@ -8,22 +8,15 @@ export default class Board extends Component {
     const height = this.props.height || '500px';
     const rows = this.props.rows || 10;
     const cols = this.props.rows || 6;
-    const arr = new Array(rows);
-    console.log(arr.length);
-    // let cells;
-    // for (let i = 0; i < rows; i++) {
-    //   for (let j = 0; j < cols; j++) {
-    //     cells += <Cell />;
-    //   }
-    // }
 
+    // count={((j + i * rows) % 3) + 1}
     return (
       <div style={{ width: width, height: height, backgroundColor: 'rgb(50,50,50)', margin: '10px auto' }}>
-        {/* {new Array(rows).map((row, i) => {
-          new Array(cols).map((col, j) => <Cell />);
-        })} */}
-
-        {[...Array(cols)].map((c, i) => [...Array(rows)].map((r, j) => <Cell key={j + i * rows} id={j + i * rows} />))}
+        {[...Array(cols)].map((c, i) =>
+          [...Array(rows)].map((r, j) => (
+            <Cell key={j + i * rows} id={j + i * rows} count={(Math.floor(Math.random() * 1000) % 3) + 1} />
+          ))
+        )}
       </div>
     );
   }
