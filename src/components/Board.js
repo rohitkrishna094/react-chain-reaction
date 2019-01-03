@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cell from './Cell';
+import './Board.css';
 
 export default class Board extends Component {
   state = {};
@@ -10,6 +11,7 @@ export default class Board extends Component {
     const rows = this.props.rows || 10;
     const cols = this.props.rows || 6;
     let array = [];
+
     if (this.props.array) {
       array = this.props.array;
     } else {
@@ -26,13 +28,12 @@ export default class Board extends Component {
 
   render() {
     const { width, height, rows, cols, array } = this.state;
+
+    // prettier-ignore
+    const cells = [...Array(rows)].map((c, i) => [...Array(cols)].map((r, j) => <Cell key={j + i * rows} id={j + i * rows} count={array[i][j]} />));
     return (
-      <div style={{ width: width, height: height, backgroundColor: 'rgb(50,50,50)', margin: '10px auto' }}>
-        {[...Array(rows)].map((c, i) =>
-          [...Array(cols)].map((r, j) => {
-            return <Cell key={j + i * rows} id={j + i * rows} count={array[i][j]} />;
-          })
-        )}
+      <div className="Board" style={{ width: width, height: height }}>
+        {cells}
       </div>
     );
   }

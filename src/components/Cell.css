@@ -1,0 +1,8 @@
+.Cell {
+    border: 1px rgba(255, 0, 0, 0.9) solid;
+    /* display: inline; */
+    float: left;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
