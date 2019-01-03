@@ -22,12 +22,23 @@ export default class Cell extends Component {
       width: width,
       height: height
     };
+    // console.log(this.props.id);
   }
+
+  onClick = e => {
+    // before doing anything make sure this cell can be clicked by current user that is he/she is not clicking other players' cell
+    console.log(this.props.id);
+    if (this.state.count >= 0 && this.state.count < 3) {
+      this.setState({ count: this.state.count + 1 });
+    } else {
+      // dispatch an action
+    }
+  };
 
   render() {
     const { count } = this.state;
     return (
-      <div className="Cell" style={this.style}>
+      <div className="Cell" style={this.style} onClick={this.onClick}>
         <div className="Sphere" style={this.innerStyle}>
           <Spheres count={count} id={this.props.id} />
         </div>

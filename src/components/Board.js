@@ -30,7 +30,7 @@ export default class Board extends Component {
     const { width, height, rows, cols, array } = this.state;
 
     // prettier-ignore
-    const cells = [...Array(rows)].map((c, i) => [...Array(cols)].map((r, j) => <Cell key={j + i * rows} id={j + i * rows} count={array[i][j]} />));
+    const cells = [...Array(rows)].map((c, i) => [...Array(cols)].map((r, j) => <Cell key={i * cols + j} id={i * cols + j } count={array[i][j]} />));
     return (
       <div className="Board" style={{ width: width, height: height }}>
         {cells}
