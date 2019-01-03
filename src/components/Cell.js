@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Spheres from './Spheres';
+import { propagate } from '../store/actions/GameActions';
+import { connect } from 'react-redux';
 import './Sphere.css';
 import './Cell.css';
 
-export default class Cell extends Component {
+class Cell extends Component {
   state = {};
   style = {};
   innerStyle = {};
@@ -32,6 +34,7 @@ export default class Cell extends Component {
       this.setState({ count: this.state.count + 1 });
     } else {
       // dispatch an action
+      this.props.propagate(this.props.id);
     }
   };
 
@@ -46,3 +49,14 @@ export default class Cell extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    propagate: id => dispatch(propagate(id))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Cell);

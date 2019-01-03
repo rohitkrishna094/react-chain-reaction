@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Board from './Board';
 
-// prettier-ignore
-const arr = [
-    [3, 1, 3, 1, 3, 1],
-    [1, 3, 1, 2, 3, 1],
-    [3, 3, 2, 3, 2, 1],
-    [1, 2, 1, 3, 2, 2],
-    [2, 2, 0, 2, 3, 3],
-    [3, 2, 2, 1, 2, 1],
-    [2, 3, 1, 3, 3, 2],
-    [1, 3, 3, 2, 2, 2],
-    [2, 2, 2, 1, 2, 2],
-    [3, 1, 1, 3, 1, 0],
-  ]
-
 class Game extends Component {
-  state = { array: arr };
-
   render() {
+    const { width, height, rows, cols, array } = this.props;
     return (
       <div>
-        <Board array={this.state.array} />
+        <Board array={array} width={width} height={height} rows={rows} cols={cols} />
       </div>
     );
   }
 }
 
-export default Game;
+const mapStateToProps = state => {
+  return {
+    array: state.game.array,
+    width: state.game.width,
+    height: state.game.height,
+    rows: state.game.rows,
+    cols: state.game.cols
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Game);

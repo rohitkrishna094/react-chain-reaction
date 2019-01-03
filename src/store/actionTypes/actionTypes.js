@@ -1,0 +1,1 @@
+export const PROPAGATE = 'SPHERE_PROPAGATE';

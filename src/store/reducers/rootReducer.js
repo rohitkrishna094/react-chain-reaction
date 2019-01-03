@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import chainReducer from './chainReducer';
+import gameReducer from './gameReducer';
 
-const rootReducer = combineReducers({ chain: chainReducer });
+const rootReducer = combineReducers({ game: gameReducer });
 
 export default rootReducer;
