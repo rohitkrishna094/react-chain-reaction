@@ -8,11 +8,9 @@ export default class Spheres extends Component {
   };
 
   render() {
-    console.log('object');
-    const count = this.props.count || 1;
+    const count = this.props.count || 0;
     const shadowBrightness = '20%';
     const translate2d = this.positionOptions[count + ''];
-
     return (
       <React.Fragment>
         {[...Array(count)].map((item, i) => (

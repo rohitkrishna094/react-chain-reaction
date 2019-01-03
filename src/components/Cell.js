@@ -6,7 +6,7 @@ export default class Cell extends Component {
   render() {
     const width = this.props.width || '50px';
     const height = this.props.height || '50px';
-    const count = this.props.count || 1;
+    const count = this.props.count || 0;
 
     return (
       <div
@@ -28,7 +28,7 @@ export default class Cell extends Component {
             height: height
           }}
         >
-          <Spheres count={this.props.count} id={this.props.id} />
+          <Spheres count={count} id={this.props.id} />
         </div>
       </div>
     );
