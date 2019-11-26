@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "rohitkrishna094",
+      "name": "Rohit Krishna",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/18495886?v=4",
+      "profile": "https://github.com/rohitkrishna094",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-chain-reaction",
+  "projectOwner": "rohitkrishna094",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
