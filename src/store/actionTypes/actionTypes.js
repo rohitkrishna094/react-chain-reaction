@@ -1,1 +1,2 @@
-export const PROPAGATE = 'SPHERE_PROPAGATE';
+export const INCREMENT = 'SPHERE_INCREMENT';
+export const SPLIT = 'SPLIT';

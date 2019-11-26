@@ -5,7 +5,6 @@ import './Board.css';
 class Board extends Component {
   render() {
     const { width, height, rows, cols, array } = this.props;
-    console.log(width, height, rows, cols, array);
     // prettier-ignore
     const cells = [...Array(rows)].map((c, i) => [...Array(cols)].map((r, j) => <Cell key={i * cols + j} id={i * cols + j } count={array[i][j]} />));
     return (

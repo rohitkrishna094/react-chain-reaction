@@ -12,7 +12,8 @@ export default class Spheres extends Component {
   };
 
   render() {
-    const count = this.props.count || 0;
+    let count = this.props.count || 0;
+    // if (count > 3) count = 3;
     const shadowBrightness = '20%';
     const translate2d = this.positionOptions[count + ''];
     return (
