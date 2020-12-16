@@ -1,33 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Board from './Board';
 
-class Game extends Component {
-  render() {
-    const { width, height, rows, cols, array } = this.props;
-    return (
-      <div>
-        <Board array={array} width={width} height={height} rows={rows} cols={cols} />
-      </div>
-    );
-  }
-}
+const Game = () => {
+  const game = useSelector((state) => state.game);
+  const { width, height, rows, cols, array } = game;
 
-const mapStateToProps = state => {
-  return {
-    array: state.game.array,
-    width: state.game.width,
-    height: state.game.height,
-    rows: state.game.rows,
-    cols: state.game.cols
-  };
+  return (
+    <div>
+      <Board array={array} width={width} height={height} rows={rows} cols={cols} />
+    </div>
+  );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {};
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Game);
+export default Game;
